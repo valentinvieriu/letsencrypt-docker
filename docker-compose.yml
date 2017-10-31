@@ -56,7 +56,7 @@ services:
       - letsencrypt
   letsencrypt:
     build: .
-    image: valentinvieriu/letsencrypt:1.1.0
+    image: valentinvieriu/letsencrypt:1.1.1
     environment:
       - DOMAINS=www.EXAMPLE.COM,foo.EXAMPLE.COM;bar.EXAMPLE.COM
       - EMAIL=admin@EXAMPLE.COM
