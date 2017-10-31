@@ -49,18 +49,18 @@ services:
         s3KYY2u5A8AT6CJoeYFKdB38ydKA0OusVDR/9Ply+30EO8OfCB1jCY8hyXFjGtpb
         HCbQSupHz2fuF5ka
         -----END CERTIFICATE-----
-    image: 'dockercloud/haproxy:1.6.3'
+    image: 'dockercloud/haproxy:1.6.7'
     ports:
       - '443'
     volumes_from:
       - letsencrypt
   letsencrypt:
     build: .
-    image: 'interaction/letsencrypt:local'
+    image: valentinvieriu/letsencrypt:1.1.0
     environment:
       - DOMAINS=www.EXAMPLE.COM,foo.EXAMPLE.COM;bar.EXAMPLE.COM
       - EMAIL=admin@EXAMPLE.COM
-      - HAPROXY_IMAGE=dockercloud/haproxy:1.6.3
+      - HAPROXY_IMAGE=dockercloud/haproxy:1.6.7
     ports:
       - '80'
     volumes:
